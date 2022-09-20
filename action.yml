@@ -11,6 +11,9 @@ inputs:
   latest-version:
     required: true
     description: Semantic version number of the latest release. The value will be used as a heading text.
+  latest-commit:
+    required: false
+    description: The commit hash on which this action need to be performed. Will be used to generate compare link.
   release-date:
     required: false
     description: The date the latest version has been released. Defaults to the current date.
@@ -46,6 +49,7 @@ runs:
   args:
     - ${{ inputs.release-notes }}
     - ${{ inputs.latest-version }}
+    - ${{ inputs.latest-commit }}
     - ${{ inputs.release-date }}
     - ${{ inputs.path-to-changelog }}
     - ${{ inputs.compare-url-target-revision }}

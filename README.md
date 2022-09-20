@@ -42,6 +42,7 @@ jobs:
         uses: stefanzweifel/changelog-updater-action@v1
         with:
           latest-version: ${{ github.event.release.tag_name }}
+          latest-commit: ${{ github.sha }}
           release-notes: ${{ github.event.release.body }}
 
       - name: Commit updated CHANGELOG
